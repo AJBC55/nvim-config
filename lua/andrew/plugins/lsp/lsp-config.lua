@@ -105,6 +105,7 @@ return {
 									enable = true, -- Enable auto-import during completions
 								},
 							},
+							filetypes = { "rust", "rs" },
 						},
 					},
 				})
