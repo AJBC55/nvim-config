@@ -102,10 +102,11 @@ return {
 							},
 							completion = {
 								autoimport = {
-									enable = true, -- Enable auto-import during completions
+									enable = true,
 								},
+								addCallArgumentSnippets = false, -- Disable inserting `(...)`
+								addCallParenthesis = false, -- Enable auto-import during completions
 							},
-							filetypes = { "rust", "rs" },
 						},
 					},
 				})

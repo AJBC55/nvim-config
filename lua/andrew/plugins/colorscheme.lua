@@ -7,7 +7,7 @@ return {
 
 		-- Optional customizations
 		vim.g.vscode_style = "dark" -- Set to "dark" or "light"
-		vim.g.vscode_transparent = 0 -- Set to 1 for transparent background
+		vim.g.vscode_transparent = 1 -- Set to 1 for transparent background
 		vim.g.vscode_italic_comment = 1 -- Enable italic comments
 		vim.g.vscode_disable_nvimtree_bg = true -- Disable NvimTree background color
 	end,

@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	run = ":TSUpdate",
+	build = ":TSUpdate", -- This replaces the `run` field
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			highlight = {
@@ -19,22 +19,15 @@ return {
 			indent = {
 				enable = true,
 			},
-			folding = {
-				enable = false,
-				disable = { "python", "markdown" },
-			},
 			ensure_installed = {
 				"go",
-				"dart",
 				"bash",
 				"c",
-				"cpp",
 				"javascript",
 				"json",
 				"lua",
 				"python",
 				"rust",
-				"typescript",
 				"html",
 				"css",
 			},
