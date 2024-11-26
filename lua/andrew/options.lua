@@ -12,6 +12,7 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.wrap = false
 
+-- hello
 -- looks
 vim.o.termguicolors = true
 vim.o.signcolumn = "yes"
