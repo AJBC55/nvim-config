@@ -100,6 +100,9 @@ return {
 									command = "clippy",
 								},
 							},
+							procMacro = {
+								enable = true, -- Enable procedural macro support
+							},
 							completion = {
 								autoimport = {
 									enable = true,
@@ -107,7 +110,30 @@ return {
 								addCallArgumentSnippets = false, -- Disable inserting `(...)`
 								addCallParenthesis = false, -- Enable auto-import during completions
 							},
+							inlayHints = {
+								enable = true,
+								parameterHints = true,
+								typeHints = true,
+							},
+							diagnostics = {
+								enable = false,
+								showRequestFailedErrorNotification = false,
+							},
 						},
+					},
+				})
+			end,
+
+			-- Add to the setup_handlers section for clangd
+			["clangd"] = function()
+				lspconfig["clangd"].setup({
+					capabilities = capabilities,
+					cmd = {
+						"clangd",
+						"--background-index",
+						"--clang-tidy",
+						"--completion-style=detailed",
+						"--fallback-style=Google",
 					},
 				})
 			end,

@@ -25,3 +25,12 @@ vim.o.clipboard = "unnamedplus"
 
 -- split
 vim.o.splitright = true
+
+-- fix for the rust error
+
+vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
+	if result.type == vim.lsp.protocol.MessageType.Error and result.message:match("server cancelled the request") then
+		return
+	end
+	vim.lsp.handlers["window/showMessageDefault"](_, result, ctx)
+end
